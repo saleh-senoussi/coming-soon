@@ -1,0 +1,25 @@
+@use 'vars';
+@use 'mixins';
+
+.btn {
+    width: 100%;
+    @include mixins.spacer(sm);
+    @include mixins.md {
+        width: max-content;
+    }
+    
+    &-primary {
+        background-color: vars.$primary-500;
+        color: vars.$grey-100;
+        &:focus {
+            background-color: vars.$primary-500;
+            color: vars.$grey-100;
+            box-shadow: none;
+        }
+        &:hover {
+            background-color: vars.$primary-200;
+            color: vars.$primary-500;
+            box-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@use 'vars';
+@use 'mixins';
+
+h1 {
+    @include mixins.h1;
+}
+
+h2 {
+    @include mixins.h2;
+}
+
+h3 {
+    @include mixins.h3;
+}
+
+h4 {
+    @include mixins.h4;
+}
+
+p {
+    @include mixins.font();
+    margin-bottom: 18px;
+}
+
+.base-text {
+    @include mixins.font();
+    &-medium {
+        @include mixins.font(base, medium);
+    }
+}
+
+.variant-text {
+    @include mixins.font(variant);
+    &-medium {
+        @include mixins.font(variant, medium);
+    }
+}
+
+.color {
+    &-base {
+        color: vars.$primary-100;
+    }
+    &-variant {
+        color: vars.$primary-500;
+    }
+}
+
+.container {
+    margin-top: 4rem;
+    @include spacer(lg);
+}
+
+.row {
+    & .no-gutters {
+        padding: 0;
+    }
+}

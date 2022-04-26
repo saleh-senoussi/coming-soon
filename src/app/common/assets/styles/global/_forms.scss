@@ -1,0 +1,17 @@
+@use 'vars';
+@use 'mixins';
+
+.form-group {
+    @include mixins.spacer(xs);
+    .form-control {
+        border-color: vars.$primary-400;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .ng-touched {
+        &.ng-invalid {
+            border-color: vars.$primary-100;
+        }
+    }
+}

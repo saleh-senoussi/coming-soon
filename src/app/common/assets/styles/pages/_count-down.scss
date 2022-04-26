@@ -1,0 +1,51 @@
+@use './../global/mixins';
+@use './../global/vars';
+
+.count-down {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: vars.$primary-400;
+
+  .count-row {
+    @include mixins.flex(center, center, row);
+    @include mixins.spacer(sm);
+    & + .count-row {
+      @include mixins.spacer(reset);
+    }
+    .count-element {
+      background-color: vars.$primary-200;
+      border-radius: 100%;
+      position: relative;
+      width: 100px;
+      padding-top: 100px;
+      border: 1px solid vars.$grey-300;
+      @include mixins.header(h4, reset);
+      @include mixins.md {
+        width: 150px;
+        padding-top: 150px;
+        @include mixins.header(h2, reset);
+      }
+
+      .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        @include mixins.flex(center, center, column);
+        color: vars.$primary-500;
+        span + span {
+          @include mixins.font(base, medium);
+          @include mixins.md {
+            @include mixins.header(h4, reset);
+          }
+        }
+      }
+
+      & + .count-element {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

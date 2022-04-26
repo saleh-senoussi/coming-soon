@@ -1,0 +1,108 @@
+@use 'vars';
+
+@mixin sm {
+  @media (min-width: vars.$mobile) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: vars.$tablet) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: vars.$desktop) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: vars.$desktopXL) {
+    @content;
+  }
+}
+
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin spacer($size) {
+  @if $size == xs {
+    margin-bottom: 1rem;
+  } @else if $size == sm {
+    margin-bottom: 2rem;
+  } @else if $size == md {
+    margin-bottom: 3rem;
+  } @else if $size == lg {
+    margin-bottom: 4rem;
+  } @else if $size == xl {
+    margin-bottom: 5rem;
+  } @else if $size == xxl {
+    margin-bottom: 6rem;
+  } @else if $size == reset {
+    margin-bottom: 0;
+  }
+}
+
+@mixin h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+@mixin h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+@mixin h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+@mixin h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@mixin header($type, $margin) {
+  @if $type == h1 {
+    @include h1;
+    @if $margin == reset {
+      @include spacer(reset);
+    }
+  } @else if $type == h2 {
+    @include h2;
+    @if $margin == reset {
+      @include spacer(reset);
+    }
+  } @else if $type == h3 {
+    @include h3;
+    @if $margin == reset {
+      @include spacer(reset);
+    }
+  } @else if $type == h4 {
+    @include h4;
+    @if $margin == reset {
+      @include spacer(reset);
+    }
+  } 
+}
+
+@mixin font($type: base, $weight: regular) {
+  @if $type == base {
+    font-size: 16px;
+  } @else if $type == variant {
+    font-size: 14px;
+  } 
+  @if $weight == medium {
+    font-weight: 500;
+  } 
+}

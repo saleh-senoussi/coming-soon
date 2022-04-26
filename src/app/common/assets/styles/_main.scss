@@ -1,0 +1,12 @@
+@import './global/vars';
+@import './global/mixins';
+@import './global/forms';
+@import './global/global';
+@import './global/btn';
+
+
+/****************************
+ * pages                    *
+*****************************/
+@import './pages/count-down';
+@import './pages/wait-list';

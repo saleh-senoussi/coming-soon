@@ -1,0 +1,18 @@
+@use './../global/mixins';
+@use './../global/vars';
+
+.wait-list {
+    height: 100%;
+    @include mixins.flex(center, center, row);
+    background-image: linear-gradient(vars.$primary-200, vars.$primary-200), url('./../../../../../assets/images/excited-kid.png');
+    background-color: vars.$grey-100;
+    background-size: cover;
+    background-blend-mode: darken;
+    .subscribe-form {
+        background-color: vars.$grey-100;
+        border-radius: 25px;
+        padding: 2rem;
+        opacity: 0.9;
+    }
+  }
+  

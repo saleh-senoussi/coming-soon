@@ -1,0 +1,45 @@
+<div class="wait-list wait-list-image">
+  <div class="container">
+    <div class="subscribe-form">
+      <h1 class="color-variant">
+        Subscribe for <span class="color-base">latest</span> development
+        updates!
+      </h1>
+      <form [formGroup]="subscribeForm" (submit)="onSubmitSubscribeForm()">
+        <div class="form-group">
+          <input
+            class="form-control input-lg"
+            type="text"
+            formControlName="firstName"
+            placeholder="First name"
+            id="firstName"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            class="form-control input-lg"
+            type="text"
+            formControlName="lastName"
+            placeholder="Last name"
+            id="lastName"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            class="form-control input-lg"
+            type="text"
+            formControlName="email"
+            placeholder="Email"
+            id="email"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="subscribeLatestNews">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

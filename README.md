@@ -1,5 +1,6 @@
 # ComingSoon
-
+Coming soon landing page created with Angular, reactive forms storing subscription wait list information to Firebase, Dockerfile and CI pipelines, using Sass and Scss, Bootstrap
+ 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
 ## Development server
